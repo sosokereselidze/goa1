@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fetch API Examples</title>
+</head>
+<body>
+  <h1>Fetch API Examples</h1>
+
+  <h2>1. Simple Fetch Request</h2>
+  <pre id="example1"></pre>
+
+  <h2>2. Fetch with Then</h2>
+  <pre id="example2"></pre>
+
+  <h2>3. Handle Errors with Catch</h2>
+  <pre id="example3"></pre>
+
+  <h2>4. Finally Block</h2>
+  <pre id="example4"></pre>
+
+  <h2>5. Fetch and Display</h2>
+  <pre id="example5"></pre>
+
+  <h2>6. Chaining Multiple Then</h2>
+  <pre id="example6"></pre>
+
+  <h2>7. Fetching Image</h2>
+  <img id="example7" alt="Fetched Image">
+
+  <h2>8. Delayed Fetch Request</h2>
+  <pre id="example8"></pre>
+
+  <h2>9. Fetch and Delay JSON Parsing</h2>
+  <pre id="example9"></pre>
+
+  <h2>10. Chained Delayed Fetch</h2>
+  <pre id="example10"></pre>
+
+  <h2>11. Delayed Error Handling</h2>
+  <pre id="example11"></pre>
+
+  <h2>12. Completion Log with Delay</h2>
+  <pre id="example12"></pre>
+
+  <h2>13. Fetch and Alert</h2>
+  <button onclick="showAlert()">Show Alert</button>
+
+  <h2>14. Fetch and Conditional Display</h2>
+  <pre id="example14"></pre>
+
+  <h2>15. Fetch and Form Submission</h2>
+  <form id="myForm">
+    <input type="text" name="title" placeholder="Title" required>
+    <input type="text" name="body" placeholder="Body" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    //  Simple Fetch Request
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example1').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error('Error:', error));
+
+    //  Fetch with Then
+    fetch('https://jsonplaceholder.typicode.com/posts/2')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example2').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Handle Errors with Catch
+    fetch('https://jsonplaceholder.typicode.com/invalid-url')
+      .then(response => response.json())
+      .catch(error => {
+        document.getElementById('example3').innerText = 'Error fetching data: ' + error.message;
+      });
+
+    // Finally Block
+    fetch('https://jsonplaceholder.typicode.com/posts/3')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example4').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => {
+        document.getElementById('example4').innerText = 'Error fetching data: ' + error.message;
+      })
+      .finally(() => {
+        console.log('Request completed');
+      });
+
+    // Fetch and Display
+    fetch('https://jsonplaceholder.typicode.com/posts/4')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example5').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Chaining Multiple Then
+    fetch('https://jsonplaceholder.typicode.com/posts/5')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example6').innerText = 'First then:\n' + JSON.stringify(data, null, 2);
+        return data;
+      })
+      .then(data => {
+        document.getElementById('example6').innerText += '\nSecond then:\n' + JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Fetching Image
+    fetch('https://jsonplaceholder.typicode.com/photos/1')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example7').src = data.url;
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Delayed Fetch Request
+    setTimeout(() => {
+      fetch('https://jsonplaceholder.typicode.com/posts/6')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('example8').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error:', error));
+    }, 3000);
+
+    // Fetch and Delay JSON Parsing
+    fetch('https://jsonplaceholder.typicode.com/posts/7')
+      .then(response => {
+        setTimeout(() => {
+          response.json().then(data => {
+            document.getElementById('example9').innerText = JSON.stringify(data, null, 2);
+          });
+        }, 3000);
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Chained Delayed Fetch
+    fetch('https://jsonplaceholder.typicode.com/posts/8')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example10').innerText = 'First fetch:\n' + JSON.stringify(data, null, 2);
+        return new Promise(resolve => setTimeout(() => resolve(data), 3000));
+      })
+      .then(() => fetch('https://jsonplaceholder.typicode.com/posts/9'))
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example10').innerText += '\nSecond fetch:\n' + JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Delayed Error Handling
+    fetch('https://jsonplaceholder.typicode.com/invalid-url')
+      .then(response => response.json())
+      .catch(error => {
+        setTimeout(() => {
+          document.getElementById('example11').innerText = 'Error fetching data: ' + error.message;
+        }, 3000);
+      });
+
+    // Completion Log with Delay
+    fetch('https://jsonplaceholder.typicode.com/posts/10')
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('example12').innerText = JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error('Error:', error))
+      .finally(() => {
+        setTimeout(() => {
+          console.log('Request completed with delay');
+        }, 3000);
+      });
+
+    // Fetch and Alert
+    function showAlert() {
+      fetch('https://jsonplaceholder.typicode.com/posts/11')
+        .then(response => response.json())
+        .then(data => {
+          setTimeout(() => {
+            alert(JSON.stringify(data));
+          }, 3000);
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    // Fetch and Conditional Display
+    fetch('https://jsonplaceholder.typicode.com/posts/12')
+      .then(response => response.json())
+      .then(data => {
+        setTimeout(() => {
+          if (data.id % 2 === 0) {
+            document.getElementById('example14').innerText = JSON.stringify(data, null, 2);
+          }
+        }, 3000);
+      })
+      .catch(error => console.error('Error:', error));
+
+    // Fetch and Form Submission
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData.entries());
+
+      setTimeout(() => {
+        fetch('https://jsonplaceholder.typicode.com/posts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => console.log('Success:', data))
+        .catch(error => console.error('Error:', error));
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent-container{
+            position: relative;
+            display: flex;
+            width: 500px;
+            height: 500px;
+            background-color: green;
+            gap: 2rem;
+        }
+
+        #child-container{
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background-color: aliceblue;
+            font-size: 5rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: left 2s ease; 
+        }
+    </style>
+</head>
+<body>
+
+    <div id="parent-container">
+        <div id="child-container">1</div>
+    </div>
+
+    <script>
+        const child = document.getElementById("child-container");
+
+        let position = 0;
+        let moveRightInterval;
+
+        function moveRight() {
+            if (position == 300) {
+                clearInterval(moveRightInterval);
+                moveLeft();
+            } else {
+                child.style.left = position + "px";
+                position++;
+            }
+        }
+
+        function moveLeft() {
+            if (position == 0) {
+                child.style.left = position + "px";
+                clearInterval(moveRightInterval);
+            } else {
+                child.style.left = position + "px";
+                position--;
+            }
+        }
+
+        moveRightInterval = setInterval(moveRight, 10);
+    </script>
+</body>
+</html>

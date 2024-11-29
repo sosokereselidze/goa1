@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Outfit", sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(243, 229, 216);
+}
+
+main{
+    margin-top: 70px;
+    width: 670px;
+    height: 1800px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+img{
+    width: 100%;
+    border-radius: 15px;
+}
+
+.content{
+    width: 590px;
+    height: 1720px;
+    border-radius: 15px;
+}
+
+h1{
+    font-family: "Young Serif", serif;
+    font-weight: 400;
+}
+
+.line{
+    width: 100%;
+    height: 1px;
+    margin-top: 20px;
+    background-color: rgb(231, 231, 231);
+}
+
+.bottom_line{
+    width: 100%;
+    height: 1px;
+    background-color: rgb(231, 231, 231);
+}
+
+.simple{
+    margin-top: 20px;
+}
+
+.first_paragraph{
+    margin-top: 10px;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+.preparation{
+    width: 100%;
+    height: 140px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-radius: 15px;
+    background-color: rgb(255, 247, 252);
+}
+
+.preparation_ul{
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.preparation_li{
+    padding-left: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    color: rgb(113, 46, 73);
+}
+
+.time{
+    color: rgb(113, 46, 73);
+    font-weight: 600;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.bold{
+    color: rgb(81, 74, 70);
+    font-weight: 700;
+}
+
+.black{
+    color: rgb(125, 116, 121);
+}
+
+.ingredients_h1{
+    color: rgb(133, 71, 50);
+    margin-top: 30px;
+}
+
+.ingredients_ul{
+    margin-left: 20px;
+    margin-top: 20px;
+    line-height: 35px;
+}
+
+.ingredients_li{
+    color: rgb(104, 60, 55);
+    padding-left: 20px;
+}
+
+.ingredients_span{
+    color: rgb(100, 98, 97);
+    font-weight: 500;
+}
+
+.instructions_h1{
+    color: rgb(139, 71, 50);
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+.instructions_ol{
+    line-height: 30px;
+    color: rgb(118, 67, 60);
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.instructions_span{
+    color: rgb(70, 67, 67);
+    font-weight: 700;
+}
+
+.instructions_paragraph{
+    color: rgb(108, 105, 103);
+    font-weight: 500; 
+}
+
+.instructions_ol li{
+    padding-left: 10px;
+}
+
+.nutrition_h1{
+    color: rgb(125, 73, 55);
+    margin-top: 20px;
+}
+
+.flex{
+    display: flex;
+    justify-content: space-between;
+    width: 400px;
+    color: rgb(121, 69, 59);
+    font-weight: 700;
+}
+
+.nutrition{
+    line-height: 45px;
+}
+
+.left{
+    margin-left: 30px;
+    color: rgb(114, 113, 112);
+    font-weight: 500;
+}

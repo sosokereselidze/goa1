@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Link and Background</title>
+  <style>
+    #linkDiv {
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="linkDiv">
+    <a id="myLink" href="https://www.facebook.com">Example</a>
+    <button onclick="changeLinkAndBackground()">Change Link and Background</button>
+  </div>
+
+  <script>
+    const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+    const urls = ['https://www.facebook.com', 'https://www.youtube.com'];
+
+    function changeLinkAndBackground() {
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById('linkDiv').style.backgroundColor = randomColor;
+
+      const randomIndex = Math.floor(Math.random() * urls.length);
+      document.getElementById('myLink').href = urls[randomIndex];
+    }
+  </script>
+</body>
+</html>

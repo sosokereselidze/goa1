@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <p id="p1"></p>
+  <p id="p2"></p>
+  <p id="p3"></p>
+  <p id="p4"></p>
+  <p id="p5"></p>
+  <button onclick="generateRandomNumbers()">Generate Numbers</button>
+
+  <script>
+    function generateRandomNumbers() {
+      const paragraphs = ['p1', 'p2', 'p3', 'p4', 'p5'];
+      const numbers = [];
+
+      while (numbers.length < 5) {
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
+        if (!numbers.includes(randomNumber)) {
+          numbers.push(randomNumber);
+        }
+      }
+
+      for (let i = 0; i < paragraphs.length; i++) {
+        document.getElementById(paragraphs[i]).innerText = numbers[i];
+      }
+    }
+  </script>
+</body>
+</html>
+

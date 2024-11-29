@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+h2 {
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+}
+
+#main_div{
+    background-color: rgb(13, 102, 18);
+    border-radius: 10px;
+    width: 350px;
+    height: 500px;
+}
+
+
+.btn{
+    width: 50px;
+    height: 50px;
+}
+#taskInput {
+    width: 200px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    background-color: rgb(171, 226, 41);
+    margin-top: 20px;
+    color: rgb(0, 0, 0);
+}
+
+#addTaskBtn {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: none;
+    color: white;
+    font-size: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: rgb(228, 113, 6);
+}
+
+#taskListContainer {
+    margin-top: 20px;
+}
+  
+#taskList {
+    list-style-type: none;
+    padding: 0;
+    width: 250px;
+    margin: 10px auto;
+    max-height: 350px;
+    overflow-y: auto;
+}
+  
+#taskList li{
+    margin-bottom: 5px;
+    background-color: rgb(20, 151, 211);
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+} 
+
+#taskList .check{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+}
+
+#taskList li .deleteButton {
+    background-color: #eb2222;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none; 
+}

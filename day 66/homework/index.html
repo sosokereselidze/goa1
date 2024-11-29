@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+
+    #counterDiv {
+        width: 100%;
+        height: 600px;
+        text-align: center;
+    }
+    #counterDiv p {
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="counterDiv">
+    <p id="counter">0</p>
+    <button onclick="incrementCounter()">Increment</button>
+  </div>
+  
+  <script>
+    let count = 0;
+    const colors = ['red', 'blue', 'green', 'yellow', 'purple'];
+
+    function incrementCounter() {
+      count++;
+      document.getElementById('counter').innerText = count;
+
+      const randomColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById('counterDiv').style.backgroundColor = randomColor;
+
+      const textColor = colors[Math.floor(Math.random() * colors.length)];
+      document.getElementById('counter').style.color = textColor;
+    }
+  </script>
+</body>
+</html>

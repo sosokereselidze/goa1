@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Figtree', sans-serif;
+}
+
+body{
+    background-color: rgb(245, 208, 78);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+main{
+    width: 400px;
+    height: 600px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    align-items: center;
+    padding: 30px;
+    border: 1px solid black;
+    box-shadow: 15px 15px;
+}
+
+.yellow_img{
+    border-radius: 10px;
+    width: 400px;
+}
+
+button{
+    background-color: rgb(245, 208, 78);
+    border-radius: 5px;
+    color: black;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 16px;
+    width: 105px;
+    height: 35px;
+    border: none;
+    margin-top: 30px;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.date{
+    margin-top: 20px;
+    font-weight: 600;
+    font-size: 18px;   
+}
+
+h1{
+    font-weight: 900;
+    margin-top: 20px;
+}
+
+h1:hover{
+    color: rgb(245, 208, 78);
+    cursor: pointer;
+}
+
+.text{
+    color: rgb(143, 143, 143);
+    margin-top: 20px;
+    line-height: 30px;
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.profile{
+    width: 45px;
+}
+
+.footer_img{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 170px;
+    margin-top: 20px;
+}
+
+.greg{
+    margin-left: 15px;
+    font-weight: 800;
+    font-size: 18px;
+}
+
+
+@media only screen and (max-width: 470px) {
+    body{
+      background-color: lightblue;
+    }
+  }
