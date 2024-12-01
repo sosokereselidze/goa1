@@ -1,3 +1,4 @@
+import os from "os";
 const os = require('os');
 
 console.log("Command-line Arguments:");
