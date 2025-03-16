@@ -1,0 +1,10 @@
+@import "tailwindcss";
+body{
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(21,11,31,1) 53%, rgb(35, 5, 123) 100%);
+    margin: 0;
+    height: 100vh;
+    position: relative;
+}
+html {
+    scroll-behavior: smooth;
+  }

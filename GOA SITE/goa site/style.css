@@ -11,12 +11,12 @@
 }
 
 body{
-    /* min-height: 100vh; */
     background: url('goa_photo.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 }
+
 
 .header{
     position: fixed;
